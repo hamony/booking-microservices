@@ -1,0 +1,11 @@
+version: '3.6'
+services:
+  reservation-service:
+    build: reservation
+    ports:
+      - 8080:8080
+    networks:
+      - microservices
+
+networks:
+  microservices:

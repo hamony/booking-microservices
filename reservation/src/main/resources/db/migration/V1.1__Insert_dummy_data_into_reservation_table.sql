@@ -1,0 +1,2 @@
+INSERT INTO "RESERVATION" VALUES(1, 'Khoa', 'khoa.zamioza@gmail.com', '0988786554', '123', 100.00, '2024-01-01', '2024-01-02');
+INSERT INTO "RESERVATION" VALUES(2, 'Nam', 'nam@gmail.com', '09563373622', '456', 500.00, '2024-02-01', '2024-02-02');
