@@ -139,9 +139,13 @@
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.0</version>
 				<configuration>
+					<from>
+						<image>eclipse-temurin:21-jdk-alpine</image>
+					</from>
 					<to>
-					<image>ubluetech.com/hotel-microservices/reservation</image>
+						<image>docker.io/khoazamioza/reservation</image>
 					</to>
 				</configuration>
 			</plugin>
