@@ -1,4 +1,4 @@
-package com.ubluetech.template;
+package com.ubluetech.externalapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.TestConfiguration;
@@ -8,7 +8,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import org.testcontainers.utility.DockerImageName;
 
 @TestConfiguration(proxyBeanMethods = false)
-public class TestTemplateApplication {
+public class TestExternalapiApplication {
 
 	@Bean
 	@ServiceConnection
@@ -17,7 +17,7 @@ public class TestTemplateApplication {
 	}
 
 	public static void main(String[] args) {
-		SpringApplication.from(TemplateApplication::main).with(TestTemplateApplication.class).run(args);
+		SpringApplication.from(ExternalapiApplication::main).with(TestExternalapiApplication.class).run(args);
 	}
 
 }

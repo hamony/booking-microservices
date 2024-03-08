@@ -9,7 +9,6 @@ import com.ubluetech.reservation.domain.Reservation;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 
-@Service
 @Transactional
 @RequiredArgsConstructor
 class ReservationServiceImpl implements ReservationService {

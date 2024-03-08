@@ -19,21 +19,20 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ReservationController {
     private final ReservationRepository repository;
-
-    private final ReservationMapper mapper;
+    private final ReservationMapper reservationMapper;
 
     @GetMapping
     public List<ReservationDto> getAllReservations() {
         return repository.
                 findAll()
                 .stream()
-                .map(mapper::entityToDto)
+                .map(reservationMapper::entityToDto)
                 .toList();
     }
     
     @GetMapping("/{id}")
     public ReservationDto getReservation(@PathVariable(value = "id") Long id) {
-        return mapper
+        return reservationMapper
                 .entityToDto(
                     repository
                         .findById(id)
