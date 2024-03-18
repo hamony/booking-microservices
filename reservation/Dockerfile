@@ -1,6 +1,12 @@
 # syntax=docker/dockerfile:1.4
 # the first stage of our build will extract the layers
 FROM maven:3.9.6-eclipse-temurin-21-alpine AS builder
+
+# Create user to run app as (instead of root)
+RUN addgroup -S app && adduser -S app -G app
+# Use user "app"
+USER app
+
 WORKDIR /workdir/server
 COPY pom.xml /workdir/server/pom.xml
 RUN mvn dependency:go-offline

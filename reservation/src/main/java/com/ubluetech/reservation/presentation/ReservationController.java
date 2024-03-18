@@ -1,4 +1,4 @@
-package com.ubluetech.reservation.api;
+package com.ubluetech.reservation.presentation;
 
 import java.util.List;
 

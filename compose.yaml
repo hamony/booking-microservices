@@ -6,6 +6,11 @@ services:
       - 8080:8080
     networks:
       - microservices
-
+  externalapi-service:
+    build: externalapi
+    ports:
+      - "8081:8081"
+    networks:
+      - microservices
 networks:
   microservices:

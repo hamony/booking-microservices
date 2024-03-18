@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class AuditData {
+class AuditData {
     private String processTime;
     private String timestamp;
     private String requestHost;

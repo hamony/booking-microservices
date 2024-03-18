@@ -5,7 +5,7 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public class Address {
+class Address {
     private String content;
     private String street;
     private String number;

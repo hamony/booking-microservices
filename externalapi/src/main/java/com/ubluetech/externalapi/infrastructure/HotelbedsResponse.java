@@ -8,7 +8,7 @@ import java.util.List;
 @Setter
 @Getter
 @NoArgsConstructor
-public class HotelbedsResponse<T> {
+class HotelbedsResponse<T> {
     private int from;
     private int to;
     private int total;

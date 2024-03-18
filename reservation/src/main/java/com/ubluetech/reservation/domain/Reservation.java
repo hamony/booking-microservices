@@ -18,13 +18,8 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
-    @Embedded
     private Guest guest;
-
-    @Embedded
     private Room room;
-    
     private LocalDate checkInDate;
     private LocalDate checkOutDate;
 }
