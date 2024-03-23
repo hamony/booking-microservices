@@ -1,4 +1,4 @@
-package com.ubluetech.externalapi.infrastructure;
+package com.ubluetech.externalapi.infrastructure.hotelbeds;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

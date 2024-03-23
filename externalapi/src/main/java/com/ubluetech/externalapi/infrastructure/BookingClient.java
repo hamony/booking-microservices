@@ -5,7 +5,7 @@ import com.ubluetech.externalapi.domain.SearchCriteria;
 
 import reactor.core.publisher.Mono;
 
-public interface RemoteApiService {
+public interface BookingClient {
     public Mono<PagedResponse<Hotel>> searchHotels(SearchCriteria searchCriteria);
     public Mono<PagedResponse<Hotel>> getAllHotels();
 }

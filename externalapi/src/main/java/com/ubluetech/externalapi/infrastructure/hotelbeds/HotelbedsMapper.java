@@ -1,4 +1,4 @@
-package com.ubluetech.externalapi.infrastructure;
+package com.ubluetech.externalapi.infrastructure.hotelbeds;
 
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -6,6 +6,7 @@ import org.mapstruct.factory.Mappers;
 import java.util.List;
 
 import com.ubluetech.externalapi.domain.Hotel;
+import com.ubluetech.externalapi.infrastructure.PagedResponse;
 
 @Mapper(componentModel = "spring")
 public interface HotelbedsMapper {

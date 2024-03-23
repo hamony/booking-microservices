@@ -1,4 +1,4 @@
-package com.ubluetech.externalapi.infrastructure;
+package com.ubluetech.externalapi.infrastructure.exception;
 
 import org.springframework.http.HttpStatusCode;
 import org.springframework.web.reactive.function.client.WebClientResponseException;

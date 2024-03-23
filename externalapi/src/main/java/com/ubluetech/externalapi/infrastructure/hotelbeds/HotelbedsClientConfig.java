@@ -1,4 +1,4 @@
-package com.ubluetech.externalapi.infrastructure;
+package com.ubluetech.externalapi.infrastructure.hotelbeds;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
@@ -13,7 +13,7 @@ import lombok.Setter;
 @Component
 @ConfigurationProperties(prefix = "hotelbeds")
 @Validated
-public class HotelbedsClientProperties {
+public class HotelbedsClientConfig {
     @NotBlank
     private String url;
 

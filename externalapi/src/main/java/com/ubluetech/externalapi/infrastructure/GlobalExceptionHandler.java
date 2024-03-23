@@ -6,8 +6,12 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.ubluetech.externalapi.infrastructure.exception.BadRequestException;
+import com.ubluetech.externalapi.infrastructure.exception.InternalServerErrorException;
+import com.ubluetech.externalapi.infrastructure.exception.UnauthorizedException;
+
 @ControllerAdvice
-public class GlobalExceptionHandler {
+class GlobalExceptionHandler {
 
     @ExceptionHandler(BadRequestException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)

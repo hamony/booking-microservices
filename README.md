@@ -7,6 +7,7 @@ design a cloud-based Event Driven Architecture (EDA) to create a more robust and
 2.	In your architecture, demonstrate how you would integrate external APIs for making bookings and payments into the system.
 3.	Provide recommendations for future enhancements or optimizations based on performance metrics and customer feedback.
 
+### Solution
 Based on provided requirements and objectives for designing a Cloud-based Event-Driven Architecture (EDA) for a hotel reservation system using AWS services, we can identify several potential bounded contexts.
 
 ### Reservation Management:
@@ -30,10 +31,10 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 
 ### Hotel Reservation Context
 
-<img width="80%" align="center" alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/bb0076fe-5029-4f91-84b7-f157658ca2cd">
+<img width="80%" style="display: block; margin-left:auto; margin-right:auto; width:50%" alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/bb0076fe-5029-4f91-84b7-f157658ca2cd">
 
 ### Hotel Reservation Container
-<img width="80%" align="center" alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/884b1e7b-bc02-4c78-868b-124fe1e2bde0">
+<img width="80%" style="display: block; margin-left:auto; margin-right:auto; width:50%" alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/884b1e7b-bc02-4c78-868b-124fe1e2bde0">
 
 
 
