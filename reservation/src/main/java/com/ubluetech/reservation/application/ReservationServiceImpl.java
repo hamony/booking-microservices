@@ -18,7 +18,6 @@ class ReservationServiceImpl implements ReservationService {
 
     @Override
     public Reservation updateReservation(Long id, Reservation reservation) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'updateReservation'");
     }
 
