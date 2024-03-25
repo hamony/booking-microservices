@@ -44,7 +44,7 @@ jobs:
       run: |
         IMAGE_TAG=${{ github.ref }}
         if [[ ${{ github.ref }} =~ refs\/tags\/(.+) ]]; then
-          IMAGE_TAG=${{ regex.groups[1] }}
+          IMAGE_TAG=${{1}}  # Corrected extraction without `regex`
         else
           IMAGE_TAG=""
         fi
