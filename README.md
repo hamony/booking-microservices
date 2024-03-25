@@ -31,10 +31,10 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 
 ### Hotel Reservation Context
 
-<img width="80%" style="display: block; margin-left:auto; margin-right:auto; width:50%" alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/bb0076fe-5029-4f91-84b7-f157658ca2cd">
+<img alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/bb0076fe-5029-4f91-84b7-f157658ca2cd">
 
 ### Hotel Reservation Container
-<img width="80%" style="display: block; margin-left:auto; margin-right:auto; width:50%" alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/884b1e7b-bc02-4c78-868b-124fe1e2bde0">
+<img alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/884b1e7b-bc02-4c78-868b-124fe1e2bde0">
 
 
 
