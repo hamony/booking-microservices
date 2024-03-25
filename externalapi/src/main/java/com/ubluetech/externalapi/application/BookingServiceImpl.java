@@ -21,7 +21,6 @@ class BookingServiceImpl implements BookingService {
 
     @Override
     public boolean cancelBooking(int bookingId) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'cancelBooking'");
     }
 
