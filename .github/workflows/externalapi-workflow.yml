@@ -43,16 +43,12 @@ jobs:
     - name: Extract Tag (if applicable)
       id: extract_tag
       run: |
-        IMAGE_TAG=${{ github.ref }}
         if [[ ${{ github.ref }} =~ refs\/tags\/(.+) ]]; then
-          IMAGE_TAG=${{1}}  # Corrected extraction without `regex`
-        else
-          IMAGE_TAG=""
+          echo "IMAGE_TAG=${{1}}" >> $GITHUB_ENV  # Set environment variable using Env Files
         fi
-        echo "::set-output name=image_tag::$IMAGE_TAG"
     - name: Build and Push Docker Image (with tag)
-      if: steps.extract_tag.outputs.image_tag != ''
+      if: env.IMAGE_TAG != ''
       run: |
         ./mvnw clean package jib:dockerBuild -DskipTests
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/externalapi:$IMAGE_TAG
+        docker push ${{ secrets.DOCKER_USERNAME }}/externalapi:${{ env.IMAGE_TAG }}
