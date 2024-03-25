@@ -1,9 +1,5 @@
 package com.ubluetech.reservation.application;
 
-import java.util.List;
-
-import org.springframework.stereotype.Service;
-
 import com.ubluetech.reservation.domain.Reservation;
 
 import jakarta.transaction.Transactional;
