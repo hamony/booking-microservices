@@ -47,6 +47,9 @@ jobs:
         if [[ ${{ github.ref }} =~ refs\/tags\/(.+) ]]; then
           echo "IMAGE_TAG=${{1}}" >> $GITHUB_ENV  # Set environment variable using Env Files
         fi
+    - name: Print Current Directory
+      run: |
+        pwd
     - name: Build and Push Docker Image (with tag)
       if: env.IMAGE_TAG != ''
       run: |
