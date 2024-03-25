@@ -40,7 +40,6 @@ jobs:
     if: github.ref == 'refs/heads/main'  # Only run on main branch pushes
     env:  # Define environment variables here (optional)
       IMAGE_TAG: "v0.1.0-alpha"
-      CURRENT_DIR: ${{ runner.workingDirectory }}
     steps:
     - uses: actions/checkout@v3
     - name: Extract Tag (if applicable)
@@ -50,7 +49,7 @@ jobs:
         fi
     - name: Print Current Directory
       run: |
-        echo "Current Working Directory: $CURRENT_DIR"
+        pwd
     - name: Build and Push Docker Image (with tag)
       if: env.IMAGE_TAG != ''
       run: |
