@@ -17,7 +17,7 @@ spec:
       automountServiceAccountToken: false
       containers:
       - name: webapp
-        image: nanajanashia/k8s-demo-app:v1.0
+        image: khoazamioza/reservation:v1.0.0
         resources:
           limits:
             cpu: 1
