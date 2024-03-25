@@ -36,6 +36,7 @@ jobs:
   build-and-push-docker-image:  # New job for deployment
     name: Build and Publish Docker Image (on main branch with tag)
     needs: build-external-service  # This job depends on successful build
+    runs-on: ubuntu-latest  # Added missing `runs-on` property
     if: github.ref == 'refs/heads/main'  # Only run on main branch pushes
     steps:
     - uses: actions/checkout@v3
