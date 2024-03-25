@@ -38,6 +38,8 @@ jobs:
     needs: build-external-service  # This job depends on successful build
     runs-on: ubuntu-latest  # Added missing `runs-on` property
     if: github.ref == 'refs/heads/main'  # Only run on main branch pushes
+    env:  # Define environment variables here (optional)
+      IMAGE_TAG: ""
     steps:
     - uses: actions/checkout@v3
     - name: Extract Tag (if applicable)

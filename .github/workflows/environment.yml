@@ -1,4 +1,0 @@
-name: environment
-
-env: 
-  IMAGE_TAG: ""
