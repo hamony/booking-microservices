@@ -11,7 +11,6 @@ class BookingServiceImpl implements BookingService {
 
     @Override
     public BookingResponse createBooking() {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'createBooking'");
     }
 
