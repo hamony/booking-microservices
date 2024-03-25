@@ -36,7 +36,6 @@ jobs:
   build-and-push-docker-image:  # New job for deployment
     name: Build and Publish Docker Image (on main branch with tag)
     needs: build-reservation-service  # This job depends on successful build
-    working-directory: ./reservation
     runs-on: ubuntu-latest  # Added missing `runs-on` property
     if: github.ref == 'refs/heads/main'  # Only run on main branch pushes
     env:  # Define environment variables here (optional)
@@ -48,10 +47,8 @@ jobs:
         if [[ ${{ github.ref }} =~ refs\/tags\/(.+) ]]; then
           echo "IMAGE_TAG=${{1}}" >> $GITHUB_ENV  # Set environment variable using Env Files
         fi
-    - name: Print Current Directory
-      run: |
-        pwd
     - name: Build and Push Docker Image (with tag)
+      working-directory: ./reservation
       if: env.IMAGE_TAG != ''
       run: |
         ./mvnw clean package jib:dockerBuild -DskipTests

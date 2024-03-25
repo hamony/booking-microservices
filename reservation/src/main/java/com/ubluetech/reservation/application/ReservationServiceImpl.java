@@ -23,7 +23,6 @@ class ReservationServiceImpl implements ReservationService {
 
     @Override
     public boolean cancelReservation(Long id) {
-        // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'cancelReservation'");
     }    
 }
