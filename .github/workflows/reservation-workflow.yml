@@ -6,21 +6,21 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI (External API)
+name: Java CI (Reservation)
 
 on:
   push:
     branches: [ "**" ]
-    paths:
-      - 'externalapi/**'
+  paths:
+    - 'reservation/**'
 
 jobs:
-  build-external-service:
-    name: Build external api service
+  build-reservation-service:
+    name: Build reservation service
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./
+        working-directory: ./reservation
 
     steps:
     - uses: actions/checkout@v3
@@ -48,4 +48,4 @@ jobs:
       run: |
         ./mvnw clean package jib:dockerBuild -DskipTests
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/externalapi:$IMAGE_TAG
+        docker push ${{ secrets.DOCKER_USERNAME }}/reservation:$IMAGE_TAG
