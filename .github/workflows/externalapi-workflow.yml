@@ -6,19 +6,21 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Java CI with Maven
+name: Java CI (External API)
 
 on:
   push:
     branches: [ "**" ]
+    paths:
+      - 'externalapi/**'
 
 jobs:
-  build-reservation-service:
-    name: Build reservation service
+  build-external-service:
+    name: Build external api service
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./reservation
+        working-directory: ./externalapi
 
     steps:
     - uses: actions/checkout@v3
@@ -33,7 +35,17 @@ jobs:
 
     - if: ${{ github.ref == 'refs/heads/main'}}
       name: Build and Publish Docker Image
+      id: extract_tag
+      run: |
+        IMAGE_TAG=${{ github.ref }}  # Capture the entire pushed reference
+        if [[ ${{ github.ref }} =~ refs\/tags\/(.+) ]]; then
+          IMAGE_TAG=${{ regex.groups[1] }}  # Extract tag name if it's a tag push
+        else
+          IMAGE_TAG=""  # Set to empty string for non-tag pushes
+        fi
+        echo "::set-output name=image_tag::$IMAGE_TAG"  # Set output variable
+      if: steps.extract_tag.outputs.image_tag != ''  # Check for tag presence
       run: |
         ./mvnw clean package jib:dockerBuild -DskipTests
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
-        docker push ${{ secrets.DOCKER_USERNAME }}/reservation
+        docker push ${{ secrets.DOCKER_USERNAME }}/externalapi:$IMAGE_TAG

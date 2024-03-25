@@ -1,0 +1,51 @@
+# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-java-with-maven
+
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+
+name: Java CI (Reservation)
+
+on:
+  push:
+    branches: [ "**" ]
+    paths:
+      - 'reservation/**'
+
+jobs:
+  build-reservation-service:
+    name: Build reservation service
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./reservation
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 21
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven
+      run: ./mvnw verify
+
+    - if: ${{ github.ref == 'refs/heads/main'}}
+      name: Build and Publish Docker Image
+      id: extract_tag
+      run: |
+        IMAGE_TAG=${{ github.ref }}  # Capture the entire pushed reference
+        if [[ ${{ github.ref }} =~ refs\/tags\/(.+) ]]; then
+          IMAGE_TAG=${{ regex.groups[1] }}  # Extract tag name if it's a tag push
+        else
+          IMAGE_TAG=""  # Set to empty string for non-tag pushes
+        fi
+        echo "::set-output name=image_tag::$IMAGE_TAG"  # Set output variable
+      if: steps.extract_tag.outputs.image_tag != ''  # Check for tag presence
+      run: |
+        ./mvnw clean package jib:dockerBuild -DskipTests
+        docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+        docker push ${{ secrets.DOCKER_USERNAME }}/reservation:$IMAGE_TAG
