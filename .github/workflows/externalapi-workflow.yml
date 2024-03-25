@@ -36,7 +36,6 @@ jobs:
   build-and-push-docker-image:  # New job for deployment
     name: Build and Publish Docker Image (on main branch with tag)
     needs: build-external-service  # This job depends on successful build
-    working-directory: ./externalapi
     runs-on: ubuntu-latest  # Added missing `runs-on` property
     if: github.ref == 'refs/heads/main'  # Only run on main branch pushes
     env:  # Define environment variables here (optional)
@@ -49,6 +48,7 @@ jobs:
           echo "IMAGE_TAG=${{1}}" >> $GITHUB_ENV  # Set environment variable using Env Files
         fi
     - name: Build and Push Docker Image (with tag)
+      working-directory: ./externalapi
       if: env.IMAGE_TAG != ''
       run: |
         ./mvnw clean package jib:dockerBuild -DskipTests
