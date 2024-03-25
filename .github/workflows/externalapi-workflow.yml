@@ -33,18 +33,24 @@ jobs:
     - name: Build with Maven
       run: ./mvnw verify
 
-    - if: ${{ github.ref == 'refs/heads/main'}}
-      name: Build and Publish Docker Image
+  build-and-push-docker-image:  # New job for deployment
+    name: Build and Publish Docker Image (on main branch with tag)
+    needs: build-external-service  # This job depends on successful build
+    if: github.ref == 'refs/heads/main'  # Only run on main branch pushes
+    steps:
+    - uses: actions/checkout@v3
+    - name: Extract Tag (if applicable)
       id: extract_tag
       run: |
-        IMAGE_TAG=${{ github.ref }}  # Capture the entire pushed reference
+        IMAGE_TAG=${{ github.ref }}
         if [[ ${{ github.ref }} =~ refs\/tags\/(.+) ]]; then
-          IMAGE_TAG=${{ regex.groups[1] }}  # Extract tag name if it's a tag push
+          IMAGE_TAG=${{ regex.groups[1] }}
         else
-          IMAGE_TAG=""  # Set to empty string for non-tag pushes
+          IMAGE_TAG=""
         fi
-        echo "::set-output name=image_tag::$IMAGE_TAG"  # Set output variable
-      if: steps.extract_tag.outputs.image_tag != ''  # Check for tag presence
+        echo "::set-output name=image_tag::$IMAGE_TAG"
+    - name: Build and Push Docker Image (with tag)
+      if: steps.extract_tag.outputs.image_tag != ''
       run: |
         ./mvnw clean package jib:dockerBuild -DskipTests
         docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
