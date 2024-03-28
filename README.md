@@ -36,7 +36,22 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 ### Hotel Reservation Container
 ![Booking-Container](https://github.com/hamony/booking-microservices/assets/5976944/54515448-7517-4f1a-abe4-503a45bc892f)
 
+## Technical stack
+1. Architecture: Microservices and Event Driven Architecture
+2. Design Pattern: Layered Architecture and DDD(Domain Driven Design)
+3. Infrastructure Orchestration: Kubernetes
+4. Message Broker and Streaming Data: Kafka
+5. API Gateway: Kong (Might be changed for optimizing solution)
+6. AWS SNS Notification
+7. Service Mesh: Fluentd
+8. Monitoring and Observable: Grafana and Prometheus
+9. Cache: Redis
+10. Processing Concurrency among multi instances: To be defined.
 
+## Microservices Repository
+1. https://github.com/hamony/reservation-service
+2. https://github.com/hamony/external-service
 
-
+## Contact
+I'm a software engineer, please contact me via email: khoa.zamioza@gmail.com or Linkedin https://www.linkedin.com/in/khoa-nguyen-software-engineer/ if you have any concern or want to hire me.
 
