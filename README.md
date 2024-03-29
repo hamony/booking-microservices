@@ -43,10 +43,11 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 4. Message Broker and Streaming Data: Kafka
 5. API Gateway: Kong (Might be changed for optimizing solution)
 6. AWS SNS Notification
-7. Service Mesh: Fluentd
-8. Monitoring and Observable: Grafana and Prometheus
-9. Cache: Redis
-10. Processing Concurrency among multi instances: To be defined.
+7. Log Aggregation Tool: Fluentd
+8. Service Mesh: Istio
+9. Monitoring and Observable: Grafana and Prometheus
+10. Cache: Redis
+11. Processing Concurrency among multi instances: To be defined.
 
 ## Microservices Repository
 1. https://github.com/hamony/reservation-service
