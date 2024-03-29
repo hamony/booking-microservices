@@ -54,5 +54,5 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 2. https://github.com/hamony/external-service
 
 ## Contact
-I'm a software engineer, please contact me via email: khoa.zamioza@gmail.com or Linkedin https://www.linkedin.com/in/khoa-nguyen-software-engineer/ if you have any concern or want to hire me.
+I'm a software engineer, please contact me via email: khoa.zamioza@gmail.com or Linkedin https://www.linkedin.com/in/khoa-nguyen-software-engineer feel free to ask me.
 
