@@ -4,7 +4,7 @@ design a cloud-based Event Driven Architecture (EDA) to create a more robust and
 
 ### Objectives
 1.	Design a highly available and fault-tolerant EDA-based hotel reservation system using AWS services.
-2.	In your architecture, demonstrate how you would integrate external APIs for making bookings and payments into the system.
+2.	Integrate external APIs for making bookings and payments into the system.
 3.	Provide recommendations for future enhancements or optimizations based on performance metrics and customer feedback.
 
 ### Solution
@@ -34,10 +34,10 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 <img alt="image" src="https://github.com/hamony/hotel-microservices-springboot/assets/5976944/bb0076fe-5029-4f91-84b7-f157658ca2cd">
 
 ### Hotel Reservation Container
-![Booking-Container](https://github.com/hamony/booking-microservices/assets/5976944/54515448-7517-4f1a-abe4-503a45bc892f)
+![Booking-Container](Hotel-reservation-EDA.png)
 
 ## Technical stack
-1. Architecture: Microservices and Event Driven Architecture
+1. Architecture: Microservices and Event Driven Architecture, CQRS, Event Sourcing
 2. Design Pattern: Layered Architecture and DDD(Domain Driven Design)
 3. Infrastructure Orchestration: Kubernetes
 4. Message Broker and Streaming Data: Kafka
