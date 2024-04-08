@@ -37,7 +37,7 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 ![Booking-Container](Hotel-reservation-EDA.png)
 
 ## Technical stack
-1. Architecture: Microservices and Event Driven Architecture, CQRS, Event Sourcing
+1. Architecture: Microservices and Event Driven Architecture, CQRS, Event Sourcing, Saga Pattern
 2. Design Pattern: Layered Architecture and DDD(Domain Driven Design)
 3. Infrastructure Orchestration: Kubernetes
 4. Message Broker and Streaming Data: Kafka
