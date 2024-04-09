@@ -36,6 +36,9 @@ Analyzing performance metrics and customer feedback is vital for continuous impr
 ### Hotel Reservation Container
 ![Booking-Container](Hotel-reservation-EDA.png)
 
+### Start minikube (prefer docker)
+minikube start --driver=docker
+
 ## Technical stack
 1. Architecture: Microservices and Event Driven Architecture, CQRS, Event Sourcing
 2. Design Pattern: Layered Architecture and DDD(Domain Driven Design), Saga Pattern
